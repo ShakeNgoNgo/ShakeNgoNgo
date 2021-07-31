@@ -1,12 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("shake").addEventListener("click", function () {
     execute("shake");
+    document.getElementById("shake").classList.add('active');
+    document.getElementById("slide").classList.remove('active');
+    document.getElementById("clear").classList.remove('active');
   });
   document.getElementById("slide").addEventListener("click", function () {
     execute("slide");
+    document.getElementById("shake").classList.remove('active');
+    document.getElementById("slide").classList.add('active');
+    document.getElementById("clear").classList.remove('active');
   });
   document.getElementById("clear").addEventListener("click", function () {
     clear();
+    document.getElementById("shake").classList.remove('active');
+    document.getElementById("slide").classList.remove('active');
+    document.getElementById("clear").classList.add('active');
   });
 });
 const shakeCSSCode =
