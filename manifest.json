@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+  "name": "Shake Ngo Ngo",
+  "description": "Shake Ngo Ngo for Stupid Hackathon",
+  "version": "1.0.0",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "index.html"
+  },
+  "background": {
+    "scripts": ["script.js"],
+    "persistent": false
+  },
+  "permissions": ["activeTab"],
+  "icons": { "128": "icon.png" }
+}
