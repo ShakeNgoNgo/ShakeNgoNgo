@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("shake").addEventListener("click", function () {
-    execute('shake');
+    execute("shake");
   });
   document.getElementById("slide").addEventListener("click", function () {
-    execute('slide');
+    execute("slide");
   });
   document.getElementById("clear").addEventListener("click", function () {
-    execute('clear');
+    clear();
   });
 });
 const shakeCSSCode =
@@ -70,6 +70,13 @@ const execute = (type) => {
     });
     chrome.tabs.executeScript(tabs[0].id, {
       code: appendToHead,
+    });
+  });
+};
+const clear = () => {
+  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    chrome.tabs.executeScript(tabs[0].id, {
+      code: removeFromHead,
     });
   });
 };
